@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout para el trabajo final</title>
+    <title>{% block title %}{% endblock %}| Equipo 8
+    </title>
 </head>
 <body>
-    
+    <h1>Layout Proyecto Django</h1>
+    <hr>
+    <ul>
+        <li>
+            <a href="http://localhost:8000/inicio/">inicio</a>
+        </li>
+        <li>
+            <a href="http://localhost:8000/pagina2/">pagina2</a>
+        </li>
+        <li>
+            <a href="http://localhost:8000/pagina3/">pagina3</a>
+        </li>
+    </ul>
+    <hr>
+    <div id = 'content'>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <hr>
+    <footer>
+        Proyecto Django &copy; Guerra Cristian
+    </footer>
 </body>
 </html>
