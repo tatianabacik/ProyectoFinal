@@ -1,32 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'css/styles.css' %} ">
     <title>{% block title %}{% endblock %}| Equipo 8
     </title>
 </head>
 <body>
-    <h1>Layout Proyecto Django</h1>
-    <hr>
-    <ul>
-        <li>
-            <a href="http://localhost:8000/inicio/">inicio</a>
-        </li>
-        <li>
-            <a href="http://localhost:8000/pagina2/">pagina2</a>
-        </li>
-        <li>
-            <a href="http://localhost:8000/pagina3/">pagina3</a>
-        </li>
-    </ul>
-    <hr>
+    <header>
+        <div id = 'logotipo'>
+            <h1>Proyecto Django</h1>
+            <img src="{% static 'images/logo.png' %}" alt="">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'inicio' %}">inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina2' %}">pagina2</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina3' %}">pagina3</a>
+            </li>
+            <li>
+                <a href="{% url 'articulos' %}">articulos</a>
+            </li>
+            <li>
+                <a href="{% url 'create' %}">crear articulo</a>
+            </li>
+        </ul>
+    </nav>
     <div id = 'content'>
+        <h2 class="title">Titulo en layout</h2>
         {% block content %}
-
+        <strong>Contenido default desde layout</strong>
         {% endblock %}
     </div>
+    <br>
     <hr>
     <footer>
         Proyecto Django &copy; Guerra Cristian

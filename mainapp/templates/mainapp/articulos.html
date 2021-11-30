@@ -1,0 +1,24 @@
+{% extends 'layouts/layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Articulos {% endblock %} </title>
+</head>
+<body>
+    {%block content%}
+    <h1 class = 'title'>Listado de articulos</h1>
+    <ul>
+        {% for articulo in articulos %}
+            <li>
+                <h4>{{articulo.id}} {{articulo.title}}</h4>
+                <p>{{articulo.content}}</p>
+                <a href = "{% url 'borrar' id=articulo.id %}"> Eliminar Articulo </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
